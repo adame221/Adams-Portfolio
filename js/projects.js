@@ -9,17 +9,18 @@ $(document).ready(function(){
 
             console.log(projects.length);
 
-            if(projects.length >= 1) {
-                $("#projectFound").css("visibility", "visible");
-                $("#projectNotFound").css("visibility", "hidden");
-            } else {
-                $("#projectFound").css("visibility", "hidden");
-                $("#projectNotFound").css("visibility", "visible");
-            }
-
             for(var i = 0; i < projects.length; i++) {
 
                 if(q == projects[i].id) {
+
+                    if(projects[i].name != null) {
+                        $("#projectFound").css("visibility", "visible");
+                        $("#projectNotFound").css("visibility", "hidden");
+                    } else {
+                        $("#projectFound").css("visibility", "hidden");
+                        $("#projectNotFound").css("visibility", "visible");
+                    }
+                    
                     $("#projectTitle").html(myObj.project[i].name);
                     $("#description1").html(myObj.project[i].description1);
                     $("#subTitle").html(myObj.project[i].subName);
