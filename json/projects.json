@@ -1,0 +1,25 @@
+{
+    "project":[
+        {
+            "id":"RandomMovieGenerator", 
+            "gitHub": "https://github.com/adame221/Movie-Generator", 
+            "video":"videos/RandomMovieVideo.mov", 
+            "image1":"./img/movie1.png", 
+            "name":"Random Movie Generator", 
+            "subName":"Searches an api for a random movie", 
+            "description1":"This project allows a user to search by movie title.  The user inputted text sent as a parameter to the a movie rest api.  If there was movie that matched the input, then the movie details are displayed in the HTML.  If there is no movie found, then an error message is displayed.  A user can user search on a random movie in the api.", 
+            "description2":"The cool features within this app is that once a movie is returned, the user can over Metacritic, Rotten Tomato’s, and Imbd logos to find the corresponding ratings for the selected movie.  If the user clicks on the one of the rating logos, then they’ll be directed to that site with the movie prepopulated."
+        },
+
+        {
+            "id":"CountrySearch", 
+            "gitHub": "https://github.com/adame221/Country-Search", 
+            "video":"videos/CountrySearchVideo.mov", 
+            "image1":"./img/map.jpg", 
+            "name":"Country Search", 
+            "subName":"Searches an api for countries based on input", 
+            "description1":"This app allows the user to search for a specific country, or countries with a similar name.  The api used for this project <a href='https://restcountries.eu' target='_blank'>https://restcountries.eu</a>.", 
+            "description2":"If this api returns any data, the front-end will display Country Codes, Flag Image, Region, Subregion, Population, Languages.  Addtionally there will be a count of how many countries were returned.  The second table on the webpage displays how many times a region/subregion appeared in that specific search."
+        }
+    ]
+}

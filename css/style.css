@@ -302,6 +302,25 @@ header {
     text-align: center;
 }
 
+.my-education {
+    background-color: var(--clr-light);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/Graduation.jpg);
+    background-size: cover;
+    /* background-blend-mode: multiply; */
+    color: var(--clr-light);
+    text-align: center; 
+}
+
+.my-certifications {
+    background-color: var(--clr-light);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/certifications.png);
+    background-repeat: no-repeat;
+  background-size: cover;
+    /* background-blend-mode: multiply; */
+    color: var(--clr-light);
+    text-align: center; 
+}
+
 .section__title--services {
     color: var(--clr-accent);
     position: relative;
