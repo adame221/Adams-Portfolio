@@ -26,22 +26,23 @@ $(document).ready(function () {
                     $("#intro").append('<img src="' + myObj.project[i].image1 + '" width="100%" height="100%" alt="" class="intro__img">');
                     $("video").append('<source src="' + myObj.project[i].video + '" type="video/mp4">Your browser does not support the video tag.');
                     $("#description2").html(myObj.project[i].description2);
+                    $("#lastUpdated").html(myObj.project[i].lastUpdated);
                     $("#description2").append('<p>Please click <a href="' + myObj.project[i].gitHub + '" target="_blank">this link</a> to view the source code for this project.</p>');
 
                     if(myObj.project[i].video.length < 1) {
-                        $("#videoP").css("visibility", "hidden");
+                        $("#videoP").css("display", "none");
                     } else {
-                        $("#videoP").css("visibility", "visible");
+                        $("#videoP").css("display", "block");
                     }
                 }
             }
 
             if (projectFound) {
-                $("#projectFound").css("visibility", "visible");
-                $("#projectNotFound").css("visibility", "hidden");
+                $("#projectFound").css("display", "block");
+                $("#projectNotFound").css("display", "none");
             } else {
-                $("#projectFound").css("visibility", "hidden");
-                $("#projectNotFound").css("visibility", "visible");
+                $("#projectFound").css("display", "none");
+                $("#projectNotFound").css("display", "block");
             }
         }  
     });
