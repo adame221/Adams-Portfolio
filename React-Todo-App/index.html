@@ -26,7 +26,7 @@
                 },
                 {
                     id: 3,
-                    text: "Clean gecko tank",
+                    text: "Program",
                     completed: false
                 },
                 {
@@ -36,21 +36,26 @@
                 },
                 {
                     id: 5,
-                    text: "Catch up on Arrested Development",
+                    text: "Watch Sports",
                     completed: false
                 }
             ]
 
             function TodoItem(props) {
+                const completedStyle = {
+                    fontStyle: "italic",
+                    color: "#cdcdcd",
+                    textDecoration: "line-through"
+                }
+                
                 return (
                     <div className="todo-item">
-                        <input
-                            type="checkbox"
-                            disabled={props.item.completed ? true : false}
-                            checked={props.item.completed}
+                        <input 
+                            type="checkbox" 
+                            checked={props.item.completed} 
                             onChange={() => props.handleChange(props.item.id)}
                         />
-                        <p>{props.item.text}</p>
+                        <p style={props.item.completed ? completedStyle: null}>{props.item.text}</p>
                     </div>
                 )
             }
