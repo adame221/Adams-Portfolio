@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     //This function fires when the user clicks the submit button
     $("#submitButton").click(function () {
-        
+
         //Getting the user input
         var textValue = $("#userInput").val();
 
@@ -19,32 +19,129 @@ $(document).ready(function () {
             $("#content").css("display", "none");
             $(".navLinks").css("display", "none");
         } else {
+
             $(".loader").css("display", "block");
-            $.ajax({
-                type: "GET",
-                url: 'http://localhost:8888/fullstack-template-master/webroot/api/index.php',
-                data: ({ userInput: textValue }),
-                dataType: "json",
+            
+            if (textValue.length < 4) {
+                fetch("https://restcountries.eu/rest/v2/alpha/" + textValue + "?fields=name;alpha2Code;alpha3Code;population;flag;region;subregion;languages")
+                    .then(
+                        function (response) {
+                            if (response.status !== 200) {
+                                $("#content").css("display", "none");
+                                $(".loader").css("display", "none");
+                                $(".navLinks").css("display", "none");
+                                $('#userInput').val('');
+                                alert("We could not find what you were looking for.  Please try again.");
+                                return;
+                            }
+                            // Examine the text in the response
+                            response.json().then(function (data) {
+                                $(".loader").css("display", "none");
+                                    $("#content").css("display", "block");
 
-                /*Run this function if data was returned from the index.php file
-                    Display the content dislay the content div and pass the data to the outputTable function.
-                */
-                success: function (data) {
-                    $("#content").css("display", "block");
-                    outputTable(data);
-                },
+                                    var parseData = "[" + JSON.stringify(data) + "]";
+                                    data = JSON.parse(parseData);
+                                    outputTable(data);
+                                    console.log(data);
+                            });
+                        }
+                    )
 
-                /*Run this function if no data was returned from the index.php file.
-                    Hide the content dive, and alert the user that information was not found.
-                */
-                error: function (jqXHR, textStatus, errorThrown) {
-                    $("#content").css("display", "none");
-                    $(".loader").css("display", "none");
-                    $(".navLinks").css("display", "none");
-                    $('#userInput').val('');
-                    alert("We could not find what you were looking for.  Please try again.");
-                }
-            });
+                    .catch(function (err) {
+                        fetch("https://restcountries.eu/rest/v2/name/" + textValue + "?fields=name;alpha2Code;alpha3Code;population;flag;region;subregion;languages")
+                            .then(
+                                function (response) {
+                                    if (response.status !== 200) {
+                                        $("#content").css("display", "none");
+                                        $(".loader").css("display", "none");
+                                        $(".navLinks").css("display", "none");
+                                        $('#userInput').val('');
+                                        alert("We could not find what you were looking for.  Please try again.");
+                                        return;
+                                    }
+
+                                    // Examine the text in the response
+                                    response.json().then(function (data) {
+                                        $(".loader").css("display", "none");
+                                        $("#content").css("display", "block");
+                                        outputTable(data);
+                                        console.log(data);
+                                    });
+                                }
+                            )
+                    });
+            } else {
+                fetch("https://restcountries.eu/rest/v2/name/" + textValue + "?fullText=true?fields=name;alpha2Code;alpha3Code;population;flag;region;subregion;languages")
+                    .then(
+                        function (response) {
+                            if (response.status !== 200) {
+                                $("#content").css("display", "none");
+                                $(".loader").css("display", "none");
+                                $(".navLinks").css("display", "none");
+                                $('#userInput').val('');
+                                alert("We could not find what you were looking for.  Please try again.");
+                                return;
+                            }
+
+                            // Examine the text in the response
+                            response.json().then(function (data) {
+                                $(".loader").css("display", "none");
+                                $("#content").css("display", "block");
+                                outputTable(data);
+                                console.log(data);
+                            });
+                        }
+                    )
+                    .catch(function (err) {
+                        fetch("https://restcountries.eu/rest/v2/name/" + textValue + "?fields=name;alpha2Code;alpha3Code;population;flag;region;subregion;languages")
+                            .then(
+                                function (response) {
+                                    if (response.status !== 200) {
+                                        $("#content").css("display", "none");
+                                        $(".loader").css("display", "none");
+                                        $(".navLinks").css("display", "none");
+                                        $('#userInput').val('');
+                                        alert("We could not find what you were looking for.  Please try again.");
+                                        return;
+                                    }
+
+                                    // Examine the text in the response
+                                    response.json().then(function (data) {
+                                        $(".loader").css("display", "none");
+                                        $("#content").css("display", "block");
+                                        outputTable(data);
+                                        console.log(data);
+                                    });
+                                }
+                            )
+                    });
+            }
+            /* $(".loader").css("display", "block");
+             $.ajax({
+                 type: "GET",
+                 url: 'http://localhost:8888/fullstack-template-master/webroot/api/index.php',
+                 data: ({ userInput: textValue }),
+                 dataType: "json",*/
+
+            /*Run this function if data was returned from the index.php file
+                Display the content dislay the content div and pass the data to the outputTable function.
+            */
+            /*success: function (data) {
+                $("#content").css("display", "block");
+                outputTable(data);
+            },*/
+
+            /*Run this function if no data was returned from the index.php file.
+                Hide the content dive, and alert the user that information was not found.
+            */
+            /*error: function (jqXHR, textStatus, errorThrown) {
+                $("#content").css("display", "none");
+                $(".loader").css("display", "none");
+                $(".navLinks").css("display", "none");
+                $('#userInput').val('');
+                alert("We could not find what you were looking for.  Please try again.");
+            }*/
+            //});
         }
         return false;
     });
@@ -57,7 +154,7 @@ $(document).ready(function () {
         //Creating and intializing variables for this function
         let regions = new Map();
         let subRegions = new Map();
-        var countryObj = JSON.parse(tableData);
+        var countryObj = tableData;
 
         var countryRow = '';
         var regionRow = '';
@@ -69,9 +166,10 @@ $(document).ready(function () {
         var region;
         var subRegion;
 
+        console.log(countryObj.length);
         //Looping through each item in the countryObj
         for (i = 0; i < countryObj.length; i++) {
-
+            
             //Getting the this region and subregion
             region = countryObj[i].region;
             subRegion = countryObj[i].subregion;
