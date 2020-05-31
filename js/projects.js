@@ -27,7 +27,10 @@ $(document).ready(function () {
                     $("video").append('<source src="' + myObj.project[i].video + '" type="video/mp4">Your browser does not support the video tag.');
                     $("#description2").html(myObj.project[i].description2);
                     $("#lastUpdated").html(myObj.project[i].lastUpdated);
-                    $("#description2").append('<p>Please click <a href="' + myObj.project[i].gitHub + '" target="_blank">this link</a> to view the source code for this project.</p>');
+                    
+                    if(myObj.project[i].gitHub.length > 1) {
+                        $("#description2").append('<p>Please click <a href="' + myObj.project[i].gitHub + '" target="_blank">this link</a> to view the source code for this project.</p>');
+                    }
 
                     if(myObj.project[i].iframePath.length > 1) {
                         $("#description1").append("<br /><a href='" + myObj.project[i].iframePath + "' target='_blank'>Click Here For Full Page View</a>");

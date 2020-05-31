@@ -1,0 +1,60 @@
+/*
+    The purpose of this file is add styling to the index.html file
+
+    @author: Adam Ely
+    @date: 03/08/2020
+*/
+
+body {
+    margin: 10px;
+}
+
+.movieSiteLogos {
+    height: auto; 
+    width: auto; 
+    max-width: 100px; 
+    max-height: 100px;
+}
+
+#movieInfo {
+    background-color: black; 
+    color: white; 
+    width: 40%; 
+    float: right;
+    padding: 10px;
+}
+
+.checked {
+    color: orange;
+  }
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('../images/8V9H.gif') 50% 50% no-repeat;
+    opacity: .8;
+}
+
+#header {
+    margin: 10px;
+}
+
+#headerImage1 {
+    width: 100px; 
+    height: 100px;
+}
+
+#titleText {
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+#headerImage2 {
+    width: 100px; 
+    height: 100px;
+    text-align: right !important;
+}
