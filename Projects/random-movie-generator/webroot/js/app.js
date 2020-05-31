@@ -41,7 +41,7 @@ $(document).ready(function () {
 
             .catch(function (err) {
                 $(".loader").hide();
-                alert(errorThrown);
+                alert(err);
             });
         //Calling the index.php file to get the random movie
         /*$.ajax({

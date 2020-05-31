@@ -32,7 +32,7 @@ $(document).ready(function () {
                         $("#description2").append('<p>Please click <a href="' + myObj.project[i].gitHub + '" target="_blank">this link</a> to view the source code for this project.</p>');
                     }
 
-                    if(myObj.project[i].iframePath.length > 1) {
+                    if(myObj.project[i].iframePath.length > 1 && myObj.project[i].video.length < 1) {
                         $("#description1").append("<br /><a href='" + myObj.project[i].iframePath + "' target='_blank'>Click Here For Full Page View</a>");
                         $("#description1").append("<br /><iframe src='" + myObj.project[i].iframePath + "' height='500' width='800'></iframe>");
                     }

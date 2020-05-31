@@ -2,8 +2,8 @@
     "project":[
         {
             "id":"RandomMovieGenerator", 
-            "gitHub": "", 
-            "video":"", 
+            "gitHub": "https://github.com/adame221/Adams-Portfolio/tree/master/Projects/random-movie-generator/webroot", 
+            "video":"videos/RandomMovieGenerator.mov", 
             "image1":"./img/movie1.png", 
             "name":"Random Movie Generator", 
             "lastUpdated": "05/30/2020",
@@ -15,7 +15,7 @@
 
         {
             "id":"CountrySearch", 
-            "gitHub": "", 
+            "gitHub": "https://github.com/adame221/Adams-Portfolio/tree/master/Projects/country-search/webroot", 
             "video":"", 
             "image1":"./img/map.jpg", 
             "name":"Country Search", 
@@ -28,7 +28,7 @@
 
         {
             "id":"ReactToDoApp", 
-            "gitHub": "", 
+            "gitHub": "https://github.com/adame221/Adams-Portfolio/tree/master/Projects/React-Todo-App", 
             "video":"", 
             "image1":"./img/ToDoList.jpg", 
             "name":"React To Do App", 
@@ -41,7 +41,7 @@
 
         {
             "id":"ReactRandomMemeGenerator", 
-            "gitHub": "", 
+            "gitHub": "https://github.com/adame221/Adams-Portfolio/tree/master/Projects/React-Meme-Generator", 
             "video":"", 
             "image1":"http://www.pngall.com/wp-content/uploads/2016/05/Trollface.png", 
             "name":"React Random Meme Generator", 
