@@ -73,13 +73,9 @@
                 boardCopy[i] = 'X';
                 setBoard(boardCopy);
             }
-
-            const jumpTo = () => {
-
-            }
         
             const renderMoves = () => (
-                <button onClick={() => setBoard(Array(9).fill(null))}>
+                <button onClick={() => {setBoard(Array(9).fill(null)); setCount(0)}}>
                     Start Game
                 </button>
             )
