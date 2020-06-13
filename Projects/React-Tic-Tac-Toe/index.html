@@ -37,54 +37,69 @@
             const [board, setBoard] = React.useState(Array(9).fill(null));
             const winner = calculateWinner(board);
             const [count, setCount] = React.useState(0);
+            const [gameCount, setGameCount] = React.useState(0);
 
             const styles = {
                 width: '200px',
                 margin: '20px auto',
             };
 
+
+            var randomNumber = 0;
+
+            React.useEffect(() => {
+                if (gameCount % 2 && count == 0) {
+                    const boardCopy = [...board];
+                    randomNumber = Math.floor(Math.random() * 8) + 0;
+                    boardCopy[randomNumber] = 'O';
+                    setBoard(boardCopy);
+                    setCount(count + 1);
+                }
+            });
+
+
             const handleClick = i => {
 
+                
                 setCount(count + 1);
                 const boardCopy = [...board];
+                
                 // If user click an occupied square or if game is won, return
                 if (winner || boardCopy[i]) {
-                    if(winner) setCount(0);
-                    
+                    if (winner) setCount(0);
+
                     return;
-                } 
-                // Put an X or an O in the clicked square
+                }
 
                 var randomNubmerNotFound = true;
-                var randomNumber = 0;
 
-                if(count < 4) {
-                    while(randomNubmerNotFound) {
+                if ((gameCount % 2 && count < 5) || (gameCount % 2 == 0 && count < 4)) {
+                    while (randomNubmerNotFound) {
 
                         randomNumber = Math.floor(Math.random() * 8) + 0;
-    
+
                         randomNubmerNotFound = !boardCopy[randomNumber] && randomNumber != i ? false : true;
-                        //randomNubmerNotFound = boardCopy[randomNumber];
                     }
-    
+
                     boardCopy[randomNumber] = 'O';
                 }
-                
+
                 boardCopy[i] = 'X';
                 setBoard(boardCopy);
             }
-        
+
             const renderMoves = () => (
-                <button onClick={() => {setBoard(Array(9).fill(null)); setCount(0)}}>
+                <button onClick={() => { setCount(0); setBoard(Array(9).fill(null)); setGameCount(gameCount + 1); }}>
                     Start Game
                 </button>
             )
-        
+
             return (
                 <div>
                     <Board squares={board} onClick={handleClick} />
                     <div style={styles}>
                         <p>{winner ? 'Winner: ' + winner : ''}</p>
+                        <p>{winner == null && ((gameCount % 2 && count == 5) || (gameCount % 2 == 0 && count == 4)) ? 'It\'s a draw!' : ''}</p>
                         {renderMoves()}
                     </div>
                 </div>
