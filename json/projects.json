@@ -63,6 +63,19 @@
             "subName":"Compete against the computer in Tic Tac Toe.", 
             "description1":"This application allows the user to choose the first square, with the computer going seconcd.  This application was built using React Hooks.  Please feel free to play the game in the ifame below", 
             "description2":"Addionally the winner is diplayed below the game square.  This is my third React application that I have built.  More updates coming soon."
+        },
+
+        {
+            "id":"VueMLBLogoColorPicker", 
+            "gitHub": "https://github.com/adame221/Adams-Portfolio/tree/master/Vue-MLB-Logo-Color-Picker", 
+            "video":"", 
+            "image1":"./img/rainbow.png", 
+            "name":"Vue MLB Logo Color Picker", 
+            "lastUpdated": "06/21/2020",
+            "iframePath" : "Projects/Vue-MLB-Logo-Color-Picker/index.html",
+            "subName":"Select an MLB logo to change page backgound color.", 
+            "description1":"Each MLB logo on this page has a hex color attached to it.  When you click on an MLB team box, the corresponding hex color will set the background for the current page. The hex color for each reprents their primary color. Please feel free to play around with the app in the iframe below.", 
+            "description2":"This is officially my first Vue application.  More updates to come soon."
         }
     ]
 }
