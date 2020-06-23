@@ -4,12 +4,21 @@ $(document).ready(function () {
 
 
         var numbArray = $("#numArray").val();
+
+        var kValString = $("#kVar").val();
+
+        if(numbArray.includes(kValString)) {
+            numbArray = numbArray.replace(kValString, '');
+        }
+
         var kVal = parseInt($("#kVar").val());
 
         var formatArray = numbArray.split(",");
 
         formatArray.sort();
         
+        formatArray = formatArray.filter(item => item);
+
         for (var i = 0, j = formatArray.length - 1; i < j;) {
             var sum = parseInt(formatArray[i]) + parseInt(formatArray[j]);
 
