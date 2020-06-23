@@ -343,6 +343,9 @@ header {
 .service {
     max-width: 500px;
     margin: 0 auto;
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 @media (min-width: 800px) {
