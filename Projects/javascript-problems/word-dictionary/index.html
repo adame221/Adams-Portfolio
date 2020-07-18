@@ -1,0 +1,34 @@
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Word Dictionary</title>
+
+    <style>
+        body {
+            padding: 10px;
+        }
+    </style>
+    <!--Includeing Javascipt Files-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./app.js"></script>
+
+    <!--Including stylesheets-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <h3>Given a dictionary of words and a string made up of those words (no spaces), return the original sentence in a list. If there is more than one possible reconstruction, return any of them. If there is no possible reconstruction, then return null.</h3>
+
+        <form>
+            <label for="stringArray">Enter an array of strings separated by a comma.</label>
+            <input type="text" id="stringArray" required="required"><br /><br />
+
+            <label for="prefix">Enter a string with 0 spaces</label>
+            <input type="text" id="prefix" required="required"><br /><br />
+
+            <input type="button" id="submitButton" value="Process">
+        </form>
+        <br />
+
+        <a href="/Adams-Portfolio/#work" >Back To Home</a>
+    </body>
+</html>
