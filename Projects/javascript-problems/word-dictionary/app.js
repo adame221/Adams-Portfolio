@@ -4,8 +4,10 @@ $(document).ready(function () {
     $("#submitButton").click(function () {
 
         //Getting the string array that user entered
-        var stringArray = $("#stringArray").val();
+        var stringArray = $("#stringArray").val().toLowerCase();
 
+        console.log(stringArray);
+        
         //If there is nothing entered in the string array
         if(stringArray.length < 1) {
             alert("Please enter an array.");
@@ -15,6 +17,11 @@ $(document).ready(function () {
         //The string array does not include a comma
         if(!stringArray.includes(",")) {
             alert("You must add more than one element to the array.");
+            return false;
+        }
+        
+        if(stringArray.endsWith(",")) {
+            alert("You must declare a word after a comma");
             return false;
         }
 
@@ -49,7 +56,7 @@ $(document).ready(function () {
             //If the format array includes the placeholder value
             //Add it to the final array
             //Reset the placeholder
-            if(formatArray.includes(placeHoler)) {
+            if(formatArray.includes(placeHoler.toLowerCase())) {
                 finalArray.push(placeHoler);
                 placeHoler = '';
             }

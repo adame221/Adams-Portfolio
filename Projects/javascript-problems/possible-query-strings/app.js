@@ -18,6 +18,11 @@ $(document).ready(function () {
             return false;
         }
 
+        if(stringArray.endsWith(",")) {
+            alert("You must declare a word after a comma");
+            return false;
+        }
+
         //Getting the prefix value that the user entered
         var prefix = $("#prefix").val();
 
@@ -37,7 +42,7 @@ $(document).ready(function () {
 
             //If the format array starts with the prefix
             //Add the current index to the final array
-            if(formatArray[i].trim().startsWith(prefix)) {
+            if(formatArray[i].toLowerCase().trim().startsWith(prefix.toLowerCase())) {
                 finalArray.push(formatArray[i]);
             }
         }
