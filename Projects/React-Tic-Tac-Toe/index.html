@@ -12,7 +12,6 @@
     <div id="root"></div>
 
     <script type="text/babel">
-
         function calculateWinner(squares) {
             const lines = [
                 [0, 1, 2],
@@ -39,7 +38,10 @@
             const winner = calculateWinner(board);
             const [count, setCount] = React.useState(0);
             const [gameCount, setGameCount] = React.useState(0);
-
+            const [XGamesWon, setXGamesWon] = React.useState(0);
+            const [OGamesWon, setOGamesWon] = React.useState(0);
+            const [gameWon, setGameWon] = React.useState(false);
+            
             const styles = {
                 width: '200px',
                 margin: '20px auto',
@@ -49,6 +51,14 @@
             var randomNumber = 0;
 
             React.useEffect(() => {
+                if(winner && gameWon) {
+                    if(winner == 'X') {
+                        setXGamesWon(XGamesWon + 1);
+                    } else {
+                        setOGamesWon(OGamesWon + 1);
+                    }
+                    setGameWon(false);
+                }
                 if (gameCount % 2 && count == 0) {
                     const boardCopy = [...board];
                     randomNumber = Math.floor(Math.random() * 8) + 0;
@@ -67,8 +77,10 @@
                 
                 // If user click an occupied square or if game is won, return
                 if (winner || boardCopy[i]) {
-                    if (winner) setCount(0);
-
+                    if (winner) {
+                        
+                        setCount(0);
+                    }
                     return;
                 }
 
@@ -90,9 +102,14 @@
             }
 
             const renderMoves = () => (
-                <button onClick={() => { setCount(0); setBoard(Array(9).fill(null)); setGameCount(gameCount + 1); }}>
+                <div>
+                <button onClick={() => { setCount(0); setBoard(Array(9).fill(null)); setGameCount(gameCount + 1); setGameWon(true);}}>
                     Start Game
-                </button>
+                </button><br /><br />
+                <b>X Games Won: </b>{XGamesWon}<br />
+                <b>O Games Won: </b>{OGamesWon}<br />
+
+                </div>
             )
 
             return (
@@ -101,6 +118,7 @@
                     <div style={styles}>
                         <p>{winner ? 'Winner: ' + winner : ''}</p>
                         <p>{winner == null && ((gameCount % 2 && count == 5) || (gameCount % 2 == 0 && count == 4)) ? 'It\'s a draw!' : ''}</p>
+                        
                         {renderMoves()}
                     </div>
                 </div>
