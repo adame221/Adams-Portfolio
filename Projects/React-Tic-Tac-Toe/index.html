@@ -103,9 +103,13 @@
 
             const renderMoves = () => (
                 <div>
-                <button onClick={() => { setCount(0); setBoard(Array(9).fill(null)); setGameCount(gameCount + 1); setGameWon(true);}}>
-                    Start Game
-                </button><br /><br />
+                    {
+                        (winner || (gameCount % 2 && count == 5) || (gameCount % 2 == 0 && count == 4)) && 
+                        <button onClick={() => { setCount(0); setBoard(Array(9).fill(null)); setGameCount(gameCount + 1); setGameWon(true);}}>
+                            Start Game
+                        </button>
+                    }
+                <br /><br />
                 <b>X Games Won: </b>{XGamesWon}<br />
                 <b>O Games Won: </b>{OGamesWon}<br />
 
