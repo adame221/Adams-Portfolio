@@ -115,7 +115,8 @@
             const renderMoves = () => (
                 <div>
                     {
-                        (winner || (gameCount % 2 && count == 5) || (gameCount % 2 == 0 && count == 4)) &&
+                        ((winner || (gameCount % 2 == 1 && count == 4) || (gameCount % 2 == 0 && count == 5)) ||
+                        (winner && (gameCount % 2 == 1 && count == 4) || (gameCount % 2 == 0 && count == 5))) &&
                         <button onClick={() => { setCount(0); setBoard(Array(9).fill(null)); setGameCount(gameCount + 1); }}>
                             Start Game
                         </button>
@@ -132,7 +133,7 @@
                     <Board squares={board} onClick={handleClick} />
                     <div style={styles}>
                         <p>{winner ? 'Winner: ' + winner : ''}</p>
-                        <p>{winner == null && ((gameCount % 2 == 1 && count == 5) || (gameCount % 2 == 0 && count == 4)) ? 'It\'s a draw!' : ''}</p>
+                        <p>{winner == null && ((gameCount % 2 == 1 && count == 4) || (gameCount % 2 == 0 && count == 5)) ? 'It\'s a draw!' : ''}</p>
 
                         {renderMoves()}
                     </div>
