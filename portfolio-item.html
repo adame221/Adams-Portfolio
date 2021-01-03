@@ -7,121 +7,139 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-    <!--Start of head-->
-    <head><link rel="stylesheet" href="normalize.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Adam Ely Portfolio Website</title>
-        <link rel="icon" href="img/portfoliologo.png" type="image/icon type">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
-        
-        <!-- Update these with your own fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Slab:400,700&display=swap" rel="stylesheet"> 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--Start of head-->
 
-        
-        <link rel="stylesheet" href="css/style.css">
+<head>
+    <link rel="stylesheet" href="normalize.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Ely Portfolio Website</title>
+    <link rel="icon" href="img/portfoliologo.png" type="image/icon type">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
 
-    </head>
-    <!--End of head-->
+    <!-- Update these with your own fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Slab:400,700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!--Start of body-->
-    <body>
 
-        <!--Start of navigation header-->
-        <header>
+    <link rel="stylesheet" href="css/style.css">
 
-            <!--Start of primary page logo-->
-            <div class="logo">
-                <img src="img/portfoliologo.png" alt="">
-            </div>
-            <!--End of primary page logo-->
+</head>
+<!--End of head-->
 
-            <!--Start of navigation icon-->
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <!--End of navigation icon-->
+<!--Start of body-->
 
-            <!--Start of navigation links-->
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="index.html#services" class="nav__link">Skills</a></li>
-                    <li class="nav__item"><a href="index.html#education" class="nav__link">Education</a></li>
-                    <li class="nav__item"><a href="index.html#certifications" class="nav__link">Certifications</a></li>
-                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
-                    <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+<body>
+
+    <!--Start of navigation header-->
+    <header>
+
+        <!--Start of primary page logo-->
+        <div class="logo">
+            <img src="img/portfoliologo.png" alt="">
+        </div>
+        <!--End of primary page logo-->
+
+        <!--Start of navigation icon-->
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <!--End of navigation icon-->
+
+        <!--Start of navigation links-->
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="index.html#services" class="nav__link">Skills</a></li>
+                <li class="nav__item"><a href="index.html#education" class="nav__link">Education</a></li>
+                <li class="nav__item"><a href="index.html#certifications" class="nav__link">Certifications</a></li>
+                <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+            </ul>
+        </nav>
+        <!--End of navigation links-->
+    </header>
+    <!--End of navigation header-->
+
+    <!--Start of page not found div-->
+    <div id="projectNotFound" style="text-align: center;">
+        <h1>Page Not Found</h1>
+    </div>
+    <!--End of page not found div-->
+
+    <!--Start of project found div-->
+    <div id="projectFound">
+
+        <!--Start of title section-->
+        <section class="intro" id="intro">
+            <h1 class="section__title section__title--intro" id="projectTitle">
+                The title <strong>of my project</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro" id="subTitle"></p>
+
+        </section>
+        <!--End of title section-->
+
+        <!--Start of content section-->
+        <div class="portfolio-item-individual">
+            <p id="description1"></p>
+            <p style="text-align: center;" id="videoP">
+                <video width="600" height="450" controls id="video">
+
+                </video>
+            </p>
+            <p id="description2"></p>
+            <p><b>Last Updated: </b><i id="lastUpdated"></i></p>
+        </div>
+        <!--End of content section-->
+    </div>
+    <!--End of project found div-->
+
+    <!-- Footer -->
+    <!--The footer contains links to my social networking sites-->
+    <footer class="footer">
+        <a href="mailto:adam.d.ely92@gmail.com" class="footer__link">adam.d.ely92@gmail.com</a>
+
+        <!--Start of services div-->
+        <div class="services">
+            <!--Start of service div-->
+            <div class="service">
+                <!--Start of Github link-->
+                <ul class="social-list">
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://github.com/adame221" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
                 </ul>
-            </nav>
-            <!--End of navigation links-->
-        </header>
-        <!--End of navigation header-->
-        
-        <!--Start of page not found div-->
-        <div id="projectNotFound" style="text-align: center;">
-            <h1>Page Not Found</h1>
-        </div>
-        <!--End of page not found div-->
-
-        <!--Start of project found div-->
-        <div id="projectFound">
-
-            <!--Start of title section-->
-            <section class="intro" id="intro">
-                <h1 class="section__title section__title--intro" id="projectTitle">
-                    The title <strong>of my project</strong>
-                </h1>
-                <p class="section__subtitle section__subtitle--intro" id="subTitle"></p>
-                
-            </section>
-            <!--End of title section-->
-
-            <!--Start of content section-->
-            <div class="portfolio-item-individual">
-                <p id="description1"></p>
-                <p style="text-align: center;" id="videoP">
-                    <video width="600" height="450" controls id="video">
-                    
-                    </video>
-                </p>
-                <p id="description2"></p>
-                <p><b>Last Updated: </b><i id="lastUpdated"></i></p>
+                <!--End of Github link-->
             </div>
-            <!--End of content section-->
+            <!--End of service div-->
+
+            <!--Start of sevice div-->
+            <div class="service">
+                <!--Start of LinkedIn link-->
+                <ul class="social-list">
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://www.linkedin.com/in/adam-ely-7223569a/"
+                            target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!--End of LinkedIn link-->
+            </div>
+            <!--End of service div-->
         </div>
-        <!--End of project found div-->
-        
-        <!-- Footer -->
-        <!--The footer contains links to my social networking sites-->
-        <footer class="footer">
-            <a href="mailto:adam.d.ely92@gmail.com" class="footer__link">adam.d.ely92@gmail.com</a>
+        <!--End of services div-->
+    </footer>
+    <!--End Of Footer-->
 
-            <!--Start of GitHub link-->
-            <ul class="social-list">
-                <li class="social-list__item">
-                    <a class="social-list__link" href="https://github.com/adame221" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </li>
-            </ul>
-            <!--End of GitHub link-->
+    <script src="js/index.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+<!--End of body-->
 
-            <!--Start of LinkedIn link-->
-            <ul class="social-list">
-                <li class="social-list__item">
-                    <a class="social-list__link" href="https://www.linkedin.com/in/adam-ely-7223569a/" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </li>
-            </ul>
-            <!--End of LinkedIn link-->
-        </footer>
-        <!--End of footer-->
-        
-        <script src="js/index.js"></script>
-        <script src="js/projects.js"></script>
-    </body>
-    <!--End of body-->
 </html>
