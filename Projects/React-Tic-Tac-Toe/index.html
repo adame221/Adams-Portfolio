@@ -130,6 +130,7 @@
 
             return (
                 <div>
+                    <Message />
                     <Board squares={board} onClick={handleClick} />
                     <div style={styles}>
                         <p>{winner ? 'Winner: ' + winner : ''}</p>
@@ -180,6 +181,16 @@
             )
         }
 
+        function Message() {
+            return (
+                <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems:'center', marginBottom: '5px'}}>
+                    <div style={{background: 'red', width: '25%', paddingLeft: '10px'}}>
+                        <h1>Hey cheater!  This square has already been taken.</h1>
+                    </div>
+                </div>
+            )
+        }
+
         function App() {
 
             return (
@@ -190,6 +201,7 @@
             )
         }
 
+        
         ReactDOM.render(<App />, document.getElementById('root'));
     </script>
 </body>
