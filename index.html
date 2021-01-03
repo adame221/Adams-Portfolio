@@ -1,5 +1,13 @@
+<!--This page is the primary page for porforlio
+    
+    Contains Skills, Projects, Education, and Certifications
+
+    Author: Adam Ely
+    Date: 01/03/2021
+-->
 <!DOCTYPE html>
 <html lang="en">
+    <!--Start of Head-->
     <head><link rel="stylesheet" href="normalize.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +21,25 @@
         <link rel="stylesheet" href="css/style.css">
 
     </head>
+    <!--End of Head-->
+
+    <!--Start of Body-->
     <body>
+        <!--Start Nav header-->
         <header>
+            <!--Start main logo for this page-->
             <div class="logo">
                 <img src="img/portfoliologo.png" alt="">
             </div>
+            <!--End main logo for this page-->
+
+            <!--Start of navigation icon for this page-->
             <button class="nav-toggle" aria-label="toggle navigation">
                 <span class="hamburger"></span>
             </button>
+            <!--End of navigation icon for this page-->
+
+            <!--Start of navigation items for this page-->
             <nav class="nav">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
@@ -31,7 +50,9 @@
                     <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
                 </ul>
             </nav>
+            <!--End of navigation items for this page-->
         </header>
+        <!--End Nav header-->
         
         <!-- Introduction -->
         <section class="intro" id="home">
@@ -43,7 +64,7 @@
         </section>
         
         
-        <!-- My services -->
+        <!--Start of Skills Section-->
         <section class="my-services" id="services">
             <h2 class="section__title section__title--services">Skills</h2>
             <div class="services">
@@ -74,7 +95,9 @@
             
             <a href="#work" class="btn">My Work</a>
         </section>
+        <!--End of Skills Section-->
         
+        <!--Start of Education Section-->
         <section class="my-education" id="education">
             <h2 class="section__title section__title--services">Education</h2>
             <div class="services">
@@ -92,6 +115,7 @@
                 </div> <!-- / service -->
             </div> <!-- / services -->
         </section>
+        <!--End of Education Section-->
 
         <section class="my-work" id="certifications">
             <h2 class="section__title section__title--services">Certifications</h2>
@@ -108,7 +132,7 @@
             </div> <!-- / services -->
         </section>
         
-        <!-- About me -->
+        <!--Start of  About Me Section-->
         <section class="about-me" id="about">
            <h2 class="section__title section__title--about">Who I am</h2>
            <p class="section__subtitle section__subtitle--about">Developer based out of Madison, WI</p>
@@ -130,13 +154,17 @@
            
            <img src="img/secondaryImage.jpg" alt="Secondary image" class="about-me__img">
         </section>
-        
-        <!-- My Work -->
+        <!--End of  About Me Section-->
+
+        <!--Start of  My Work Section-->
         <section class="my-work" id="work">
             <h2 class="section__title section__title--work">My work</h2>
             <p class="section__subtitle section__subtitle--work">A selection of my range of work</p>
-            
+
+            <!--Start of Services div-->
+            <!--This div contains projects that I have worked on-->
             <div class="services">
+                <!--Start of Basic Web Apps div-->
                 <div class="service">
                     <h3>Basic Web Apps</h3>
                     <a href="portfolio-item.html?project=RandomMovieGenerator" title="Random Movie Generator" style="color: #27ae60;">
@@ -147,6 +175,9 @@
                     </a><br />
                     
                 </div>
+                <!--End of Basic Web Apps div-->
+
+                <!--Start of React Web Apps div-->
                 <div class="service">
                     <h3>React Web Apps</h3>
                     <a href="portfolio-item.html?project=ReactToDoApp" title="React To Do App" style="color: #27ae60;">
@@ -159,12 +190,19 @@
                         Tic Tac Toe
                     </a><br />
                 </div>
+                <!--End of Recact Web Apps div-->
+
+                <!--Start of Vue Web Apps div-->
                 <div class="service">
                     <h3>Vue Web Apps</h3>
                     <a href="portfolio-item.html?project=VueMLBLogoColorPicker" title="Vue Emoji Color Picker" style="color: #27ae60;">
                         Vue Emoji Color Picker
                     </a><br />
                 </div>
+                <!--End of Vue Web Apps div-->
+
+                <!--This is the start of the javascript problems div-->
+                <!--The servjavascript problems div contains small javascript problems that I've worked on-->
                 <div class="service">
                     <h3>Javascript Problems</h3>
                     <a href="Projects/javascript-problems/two-numbers-add-up-to-k/index.html" title="Two Numbers Add Up To K" style="color: #27ae60;">
@@ -198,14 +236,17 @@
                         Palindrome Min Length
                     </a><br />
                 </div>
+                <!--End of Javascript problems div-->
             </div>
+            <!--End of Services div-->
         </section>
-        
+        <!--End of  My Work Section-->
         
         <!-- Footer -->
+        <!--The footer contains links to my social networking sites-->
         <footer class="footer">
-            <!-- replace with your own email address -->
             <a href="mailto:adam.d.ely92@gmail.com" class="footer__link">adam.d.ely92@gmail.com</a>
+            <!--Start of Github link-->
             <ul class="social-list">
                 <li class="social-list__item">
                     <a class="social-list__link" href="https://github.com/adame221" target="_blank">
@@ -213,10 +254,22 @@
                     </a>
                 </li>
             </ul>
+            <!--End of Github link-->
+
+            <!--Start of LinkedIn link-->
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/adam-ely-7223569a/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+            <!--End of LinkedIn link-->
         </footer>
-        
+        <!--End Of Footer-->
         
         <script src="js/index.js"></script>
         
     </body>
+    <!--End of body-->
 </html>
