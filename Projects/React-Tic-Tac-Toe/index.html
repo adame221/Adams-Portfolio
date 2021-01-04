@@ -1,5 +1,12 @@
+<!--
+  This html file contains the code to run the React Tic-Tac-Toe App.
+
+  @author: Adam Ely
+  @date: 01/03/2021
+-->
 <html>
 
+<!--Start of head-->
 <head>
     <title>React Tic Tac Toe</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
@@ -7,12 +14,21 @@
     <script src="https://unpkg.com/react-dom@16.7.0-alpha.0/umd/react-dom.development.js"></script>
 
 </head>
+<!--End of Head-->
 
+<!--Start of body-->
 <body>
     <div id="root"></div>
 
+    <!--Start embedded Javascript-->
     <script type="text/babel">
+
+        /*
+            This function is called to calculate the winner of the game
+        */
         function calculateWinner(squares) {
+
+            //The lines array contains arrays that determine the winer of the game
             const lines = [
                 [0, 1, 2],
                 [3, 4, 5],
@@ -23,18 +39,27 @@
                 [0, 4, 8],
                 [2, 4, 6]
             ];
+
+            //Looping through each line
             for (let i = 0; i < lines.length; i++) {
                 const [a, b, c] = lines[i];
-                if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
 
+                //Checking to see if we have a winner
+                if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+                    //Winner
                     return squares[a];
                 }
             }
+            //No winner
             return null;
         }
 
+        /*
+            This component contains all of the code needed to run the Tic-Tac-Toe app
+        */
         function Game() {
 
+            //Declaring gloabl variables
             const [board, setBoard] = React.useState(Array(9).fill(null));
             const winner = calculateWinner(board);
             const [count, setCount] = React.useState(0);
@@ -48,10 +73,12 @@
                 margin: '20px auto',
             };
 
-
             var randomNumber = 0;
 
+            //This function runs only when the count is equal to 0
             React.useEffect(() => {
+
+                //If it's the automated user's turn
                 if (gameCount % 2 == 1 && count == 0) {
                     const boardCopy = [...board];
                     randomNumber = Math.floor(Math.random() * 8) + 0;
@@ -61,11 +88,18 @@
                     setCount(count + 1);
                     setBoard(boardCopy);
                     setAvailableSquares(currentArray);
-                } else if(gameCount % 2 == 0 && count == 0) {
+                } 
+                
+                //If it's the human user's turn
+                else if(gameCount % 2 == 0 && count == 0) {
                     setAvailableSquares([0, 1, 2, 3, 4, 5, 6, 7, 8]);
                 }
             }, [count == 0]);
+
+            //This function runs every time an event happens on the screen and there's a winner
             React.useEffect(() => {
+
+                //If there is a winner
                 if (winner) {
                     if (winner == 'X') {
                         setXGamesWon(XGamesWon + 1);
@@ -76,10 +110,13 @@
             }, [winner]);
 
 
+            /*
+                This function gets called when the user clicks on a square
+            */
             const handleClick = i => {
-
-
                 setCount(count + 1);
+
+                //Getting a copy of the current board
                 const boardCopy = [...board];
 
                 // If user click an occupied square or if game is won, return
@@ -99,10 +136,13 @@
                 boardCopy[i] = 'X';
                 currArray.splice(currArray.indexOf(i), 1);
 
-
+                //Deciding the next move for the automated user
                 if ((gameCount % 2 == 1 && count < 4) || (gameCount % 2 == 0 && count < 5)) {
+
+                    //Creating a random value for the squares that are available
                     var item = currArray[Math.floor(Math.random() * currArray.length)];
 
+                    //Adding the O to the board
                     boardCopy[item] = 'O';
                     currArray.splice(currArray.indexOf(item), 1);
                 }
@@ -112,6 +152,10 @@
                 setBoard(boardCopy);
             }
 
+            /*
+                This function is called when the user clicks the new game button.
+                The function resets the board and displays the number of games each user has won.
+            */
             const renderMoves = () => (
                 <div>
                     {
@@ -128,6 +172,10 @@
                 </div>
             )
 
+            /*
+                This function adds the message and the board component below it.
+                It also contains the winner of the game or if the game was a draw.
+            */
             return (
                 <div>
                     <Message />
@@ -142,6 +190,9 @@
             )
         }
 
+        /*
+            This component contains all of the squares that are needed for this game
+        */
         function Board({ squares, onClick }) {
 
             const style = {
@@ -163,6 +214,9 @@
             )
         }
 
+        /*
+            This component creates the style for each square on the board
+        */
         function Square({ value, onClick }) {
 
             const style = {
@@ -181,6 +235,9 @@
             )
         }
 
+        /* 
+            This function displays a mesage to the user when they have clicked on a square that is already taken
+        */
         function Message() {
             return (
                 <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems:'center', marginBottom: '5px'}}>
@@ -191,6 +248,9 @@
             )
         }
 
+        /*
+            This component is the container for the Game component in this app
+        */
         function App() {
 
             return (
@@ -201,9 +261,10 @@
             )
         }
 
-        
+        //Adding the App component to the root element
         ReactDOM.render(<App />, document.getElementById('root'));
     </script>
+    <!--End embedded Javascript-->
 </body>
-
+<!--End of body-->
 </html>
