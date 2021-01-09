@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
     <script src="https://unpkg.com/react@16.7.0-alpha.0/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16.7.0-alpha.0/umd/react-dom.development.js"></script>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <!--End of Head-->
@@ -177,8 +178,8 @@
                         </button>
                     }
                     <br /><br />
-                    <b>X Games Won: </b>{XGamesWon}<br />
-                    <b>O Games Won: </b>{OGamesWon}<br />
+                    <b class='whiteText'>X Games Won: </b>{XGamesWon}<br />
+                    <b class='whiteText'>O Games Won: </b>{OGamesWon}<br />
 
                 </div>
             )
@@ -192,8 +193,8 @@
                     {invalidMove && <Message />}
                     <Board squares={board} onClick={handleClick} />
                     <div style={styles}>
-                        <p>{winner ? 'Winner: ' + winner : ''}</p>
-                        <p>{winner == null && ((gameCount % 2 == 1 && count == 4) || (gameCount % 2 == 0 && count == 5)) ? 'It\'s a draw!' : ''}</p>
+                        <p class='whiteText'>{winner ? 'Winner: ' + winner : ''}</p>
+                        <p class='whiteText'>{winner == null && ((gameCount % 2 == 1 && count == 4) || (gameCount % 2 == 0 && count == 5)) ? 'It\'s a draw!' : ''}</p>
 
                         {renderMoves()}
                     </div>
