@@ -66,6 +66,7 @@
             const [gameCount, setGameCount] = React.useState(0);
             const [XGamesWon, setXGamesWon] = React.useState(0);
             const [OGamesWon, setOGamesWon] = React.useState(0);
+            const [invalidMove, setInvalidMove] = React.useState(false);
             const [availableSquares, setAvailableSquares] = React.useState([0, 1, 2, 3, 4, 5, 6, 7, 8]);
 
             const styles = {
@@ -79,7 +80,7 @@
             React.useEffect(() => {
 
                 //If it's the automated user's turn
-                if (gameCount % 2 == 1 && count == 0) {
+                if (gameCount % 2 == 1 && count == 0 && invalidMove == false) {
                     const boardCopy = [...board];
                     randomNumber = Math.floor(Math.random() * 8) + 0;
                     var currentArray = [0, 1, 2, 3, 4, 5, 6, 7, 8];
@@ -91,7 +92,7 @@
                 } 
                 
                 //If it's the human user's turn
-                else if(gameCount % 2 == 0 && count == 0) {
+                else if(gameCount % 2 == 0 && count == 0 && invalidMove == false) {
                     setAvailableSquares([0, 1, 2, 3, 4, 5, 6, 7, 8]);
                 }
             }, [count == 0]);
@@ -100,7 +101,7 @@
             React.useEffect(() => {
 
                 //If there is a winner
-                if (winner) {
+                if (winner && invalidMove == false) {
                     if (winner == 'X') {
                         setXGamesWon(XGamesWon + 1);
                     } else {
@@ -114,28 +115,38 @@
                 This function gets called when the user clicks on a square
             */
             const handleClick = i => {
-                setCount(count + 1);
 
                 //Getting a copy of the current board
                 const boardCopy = [...board];
 
                 // If user click an occupied square or if game is won, return
                 if (winner || boardCopy[i]) {
+
+                    //If there the square is already taken
+                    //Set invalid move
+                    if(boardCopy[i]) {
+                        setInvalidMove(true);
+                    }
+
+                    //If there is a winner of the game
                     if (winner) {
 
                         setCount(0);
                     }
 
-                    return;
+                    return false;
                 }
 
+                setCount(count + 1);
                 var randomNubmerNotFound = true;
 
                 var currArray = availableSquares;
-
+                setInvalidMove(false);
                 boardCopy[i] = 'X';
-                currArray.splice(currArray.indexOf(i), 1);
 
+                //Remove current index from available squares
+                currArray.splice(currArray.indexOf(i), 1);
+                
                 //Deciding the next move for the automated user
                 if ((gameCount % 2 == 1 && count < 4) || (gameCount % 2 == 0 && count < 5)) {
 
@@ -178,7 +189,7 @@
             */
             return (
                 <div>
-                    <Message />
+                    {invalidMove && <Message />}
                     <Board squares={board} onClick={handleClick} />
                     <div style={styles}>
                         <p>{winner ? 'Winner: ' + winner : ''}</p>
@@ -242,7 +253,7 @@
             return (
                 <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems:'center', marginBottom: '5px'}}>
                     <div style={{background: 'red', width: '25%', paddingLeft: '10px'}}>
-                        <h1>Hey cheater!  This square has already been taken.</h1>
+                        <h1>This square has already been taken. Please try again.</h1>
                     </div>
                 </div>
             )
