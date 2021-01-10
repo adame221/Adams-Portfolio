@@ -7,92 +7,284 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-    <!--Start of Head-->
-    <head><link rel="stylesheet" href="normalize.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Adam Ely Portfolio Website</title>
-        <link rel="icon" href="img/portfoliologo.png" type="image/icon type">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
-        
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Slab:400,700&display=swap" rel="stylesheet"> 
-        
-        <link rel="stylesheet" href="css/style.css">
+<!--Start of Head-->
 
-    </head>
-    <!--End of Head-->
+<head>
+    <link rel="stylesheet" href="normalize.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Ely Portfolio Website</title>
+    <link rel="icon" href="img/portfoliologo.png" type="image/icon type">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
 
-    <!--Start of Body-->
-    <body>
-        <!--Start Nav header-->
-        <header>
-            <!--Start main logo for this page-->
-            <div class="logo">
-                <img src="img/portfoliologo.png" alt="">
-            </div>
-            <!--End main logo for this page-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Slab:400,700&display=swap" rel="stylesheet">
 
-            <!--Start of navigation icon for this page-->
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <!--End of navigation icon for this page-->
+    <link rel="stylesheet" href="css/style.css">
 
-            <!--Start of navigation items for this page-->
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="#services" class="nav__link">Skills</a></li>
-                    <li class="nav__item"><a href="#education" class="nav__link">Education</a></li>
-                    <li class="nav__item"><a href="#certifications" class="nav__link">Certifications</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
-                    <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
+</head>
+<!--End of Head-->
+
+<!--Start of Body-->
+
+<body>
+    <!--Start Nav header-->
+    <header>
+        <!--Start main logo for this page-->
+        <div class="logo">
+            <img src="img/portfoliologo.png" alt="">
+        </div>
+        <!--End main logo for this page-->
+
+        <!--Start of navigation icon for this page-->
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <!--End of navigation icon for this page-->
+
+        <!--Start of navigation items for this page-->
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="#services" class="nav__link">Skills</a></li>
+                <li class="nav__item"><a href="#education" class="nav__link">Education</a></li>
+                <li class="nav__item"><a href="#certifications" class="nav__link">Certifications</a></li>
+                <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
+                <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
+            </ul>
+        </nav>
+        <!--End of navigation items for this page-->
+    </header>
+    <!--End Nav header-->
+
+    <!-- Introduction -->
+    <section class="intro" id="home">
+        <h1 class="section__title section__title--intro">
+            Hi, I am <strong>Adam Ely</strong>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">Developer</p>
+        <img src="img/adam-ely01.jpg" alt="Main picture of Adam Ely" class="intro__img">
+    </section>
+
+
+    <!--Start of Skills Section-->
+    <section class="my-services" id="services">
+        <h2 class="section__title section__title--services">Skills</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Languages</h3>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>Php</li>
+                    <li>Phython</li>
+                    <li>Java</li>
+                    <li>C++</li>
+                    <li>Java</li>
+                    <li>APEX</li>
                 </ul>
-            </nav>
-            <!--End of navigation items for this page-->
-        </header>
-        <!--End Nav header-->
-        
-        <!-- Introduction -->
-        <section class="intro" id="home">
-            <h1 class="section__title section__title--intro">
-                Hi, I am <strong>Adam Ely</strong>
-            </h1>
-            <p class="section__subtitle section__subtitle--intro">Developer</p>
-            <img src="img/adam-ely01.jpg" alt="Main picture of Adam Ely" class="intro__img">
-        </section>
-        
-        
-        <!--Start of Skills Section-->
-        <section class="my-services" id="services">
-            <h2 class="section__title section__title--services">Skills</h2>
-            <div class="services">
-                <div class="service">
-                    <h3>Languages</h3>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Javascript</li>
-                        <li>Php</li>
-                        <li>Phython</li>
-                        <li>Java</li>
-                        <li>C++</li>
-                        <li>Java</li>
-                        <li>APEX</li>
-                    </ul>
-                </div> <!-- / service -->
-                
-                <div class="service">
-                    <h3>Frameworks</h3>
-                    <ul>
-                        <li>React</li>
-                        <li>Vue</li>
-                        <li>Bootstrap</li>
-                    </ul>
-                </div> <!-- / service -->
-            </div> <!-- / services -->
+            </div> <!-- / service -->
+
+            <div class="service">
+                <h3>Frameworks</h3>
+                <ul>
+                    <li>React</li>
+                    <li>Vue</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </div> <!-- / service -->
+        </div> <!-- / services -->
+
+        <a href="#work" class="btn">My Work</a>
+    </section>
+    <!--End of Skills Section-->
+
+    <!--Start of Education Section-->
+    <section class="my-education" id="education">
+        <h2 class="section__title section__title--services">Education</h2>
+        <div class="services">
+            <div class="service">
+                <i>August 2019</i><br />
+                <b>Lakeland University • Plymouth, WI</b><br />
+                <span>Bachelor of Science in Computer Science</span><br />
+                <i> - Emphasis in Computer Science, Information Systems, and Software Design</i>
+            </div> <!-- / service -->
+
+            <div class="service">
+                <i>May 2016</i><br />
+                <b>Madison Area Technical College • Madison, WI</b><br />
+                <span>Associate of Applied Science in IT Mobile Application Developer</span><br />
+            </div> <!-- / service -->
+        </div> <!-- / services -->
+    </section>
+    <!--End of Education Section-->
+
+    <section class="my-work" id="certifications">
+        <h2 class="section__title section__title--services">Certifications</h2>
+        <div class="services">
+            <div class="service">
+                <i>November 2019</i><br />
+                <b>Salesforce Certified Platform Developer I</b>
+            </div> <!-- / service -->
+
+            <div class="service">
+                <i>June 2018</i><br />
+                <b>Salesforce Certified Administrator</b>
+            </div> <!-- / service -->
+        </div> <!-- / services -->
+    </section>
+
+    <!--Start of  About Me Section-->
+    <section class="about-me" id="about">
+        <h2 class="section__title section__title--about">Who I am</h2>
+        <p class="section__subtitle section__subtitle--about">Developer based out of Madison, WI</p>
+
+        <div class="about-me__body">
+            <p>The last 2 years I have spent my career as a Salesforce Developer. In this role my primary focus was
+                building automation
+                through and creating components that extend Salesforce front-end functionality. The backend automation
+                is handled through
+                APEX, while front-end code I write is in HTML, CSS, and Javascript.
+            </p>
+            <p>
+                I graduated from Lakeland University in 2019 with a Bachelor's degree in Computer Science. Through my
+                time at Lakeland, I gained
+                knowledge in C++ and Phython.
+            </p>
+            <p>
+                In 2016, I graduated from Madison College in the Mobile Applications Developer program. This program
+                gave me a solid understanding
+                of building Android Applications. I also grew my love in front-end development while at Madison College.
+            </p>
+        </div>
+
+        <img src="img/secondaryImage.jpg" alt="Secondary image" class="about-me__img">
+    </section>
+    <!--End of  About Me Section-->
+
+    <!--Start of  My Work Section-->
+    <section class="my-work" id="work">
+        <h2 class="section__title section__title--work">My work</h2>
+        <p class="section__subtitle section__subtitle--work">A selection of my range of work</p>
+
+        <!--Start of Services div-->
+        <!--This div contains projects that I have worked on-->
+        <div class="services">
+            <!--Start of Basic Web Apps div-->
+            <div class="service">
+                <h3>Basic Web Apps</h3>
+                <a href="portfolio-item.html?project=RandomMovieGenerator" title="Random Movie Generator"
+                    style="color: #27ae60;">
+                    Random Movie Generator
+                </a><br />
+                <a href="portfolio-item.html?project=CountrySearch" title="Country Search" style="color: #27ae60;">
+                    Country Search
+                </a><br />
+
+            </div>
+            <!--End of Basic Web Apps div-->
+
+            <!--Start of React Web Apps div-->
+            <div class="service">
+                <h3>React Web Apps</h3>
+                <a href="portfolio-item.html?project=ReactToDoApp" title="React To Do App" style="color: #27ae60;">
+                    To Do App
+                </a><br />
+                <a href="portfolio-item.html?project=ReactRandomMemeGenerator" title="React Random Meme Generator"
+                    style="color: #27ae60;">
+                    Random Meme Generator
+                </a><br />
+                <a href="portfolio-item.html?project=ReactTicTacToe" title="React Tic Tac Toe" style="color: #27ae60;">
+                    Tic Tac Toe
+                </a><br />
+            </div>
+            <!--End of Recact Web Apps div-->
+
+            <!--Start of Vue Web Apps div-->
+            <div class="service">
+                <h3>Vue Web Apps</h3>
+                <a href="portfolio-item.html?project=VueMLBLogoColorPicker" title="Vue Emoji Color Picker"
+                    style="color: #27ae60;">
+                    Vue Emoji Color Picker
+                </a><br />
+            </div>
+            <!--End of Vue Web Apps div-->
+
+            <!--This is the start of the javascript problems div-->
+            <!--The servjavascript problems div contains small javascript problems that I've worked on-->
+            <div class="service">
+                <h3>Javascript Problems</h3>
+                <a href="Projects/javascript-problems/two-numbers-add-up-to-k/index.html"
+                    title="Two Numbers Add Up To K" style="color: #27ae60;">
+                    Two Numbers Add Up To K
+                </a><br />
+                <a href="Projects/javascript-problems/product-of-all-numbers/index.html" title="Product Of All Numbers"
+                    style="color: #27ae60;">
+                    Product Of All Numbers
+                </a><br />
+                <a href="Projects/javascript-problems/find-first-missing-positive-number/index.html"
+                    title="Find Missing Positive Number" style="color: #27ae60;">
+                    Find Missing Positive Number
+                </a><br />
+                <a href="Projects/javascript-problems/possible-query-strings/index.html" title="Possible Query Strings"
+                    style="color: #27ae60;">
+                    Possible Query Strings
+                </a><br />
+                <a href="Projects/javascript-problems/word-dictionary/index.html" title="Word Dictionary"
+                    style="color: #27ae60;">
+                    Word Dictionary
+                </a><br />
+                <a href="Projects/javascript-problems/well-formed/index.html" title="Well Formed"
+                    style="color: #27ae60;">
+                    Well Formed
+                </a><br />
+                <a href="Projects/javascript-problems/encoded-message/index.html" title="Encoded Message"
+                    style="color: #27ae60;">
+                    Encoded Message
+                </a><br />
+                <a href="Projects/javascript-problems/run-length-encoding/index.html" title="Run-length Encoding"
+                    style="color: #27ae60;">
+                    Run-length Encoding
+                </a><br />
+                <a href="Projects/javascript-problems/edit-distance/index.html" title="Edit Distance"
+                    style="color: #27ae60;">
+                    Edit Distance
+                </a><br />
+                <a href="Projects/javascript-problems/palindrome-min-length/index.html" title="Palindrome Min Length"
+                    style="color: #27ae60;">
+                    Palindrome Min Length
+                </a><br />
+            </div>
+            <!--End of Javascript problems div-->
+        </div>
+        <!--End of Services div-->
+    </section>
+    <!--End of  My Work Section-->
+
+    <!-- Footer -->
+    <!--The footer contains links to my social networking sites-->
+    <footer class="footer">
+        <a href="mailto:adam.d.ely92@gmail.com" class="footer__link">adam.d.ely92@gmail.com</a>
+
+        <!--Start of services div-->
+        <div class="services">
+            <!--Start of service div-->
+            <div class="service">
+                <!--Start of Github link-->
+                <ul class="social-list">
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://github.com/adame221" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!--End of Github link-->
+            </div>
+            <!--End of service div-->
             
+
             <a href="#work" class="btn">My Work</a>
         </section>
         <!--End of Skills Section-->
@@ -243,39 +435,28 @@
                     </a><br />
                 </div>
                 <!--End of Javascript problems div-->
+              
+            <!--Start of sevice div-->
+            <div class="service">
+                <!--Start of LinkedIn link-->
+                <ul class="social-list">
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://www.linkedin.com/in/adam-ely-7223569a/" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!--End of LinkedIn link-->
             </div>
-            <!--End of Services div-->
-        </section>
-        <!--End of  My Work Section-->
-        
-        <!-- Footer -->
-        <!--The footer contains links to my social networking sites-->
-        <footer class="footer">
-            <a href="mailto:adam.d.ely92@gmail.com" class="footer__link">adam.d.ely92@gmail.com</a>
-            <!--Start of Github link-->
-            <ul class="social-list">
-                <li class="social-list__item">
-                    <a class="social-list__link" href="https://github.com/adame221" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </li>
-            </ul>
-            <!--End of Github link-->
+            <!--End of service div-->
+        </div>
+        <!--End of services div-->
+    </footer>
+    <!--End Of Footer-->
 
-            <!--Start of LinkedIn link-->
-            <ul class="social-list">
-                <li class="social-list__item">
-                    <a class="social-list__link" href="https://www.linkedin.com/in/adam-ely-7223569a/" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </li>
-            </ul>
-            <!--End of LinkedIn link-->
-        </footer>
-        <!--End Of Footer-->
-        
-        <script src="js/index.js"></script>
-        
-    </body>
-    <!--End of body-->
+    <script src="js/index.js"></script>
+
+</body>
+<!--End of body-->
+
 </html>
