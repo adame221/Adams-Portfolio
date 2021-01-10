@@ -173,7 +173,7 @@
                     {
                         ((winner || (gameCount % 2 == 1 && count == 4) || (gameCount % 2 == 0 && count == 5)) ||
                         (winner && (gameCount % 2 == 1 && count == 4) || (gameCount % 2 == 0 && count == 5))) &&
-                        <button onClick={() => { setCount(0); setBoard(Array(9).fill(null)); setGameCount(gameCount + 1); }}>
+                        <button onClick={() => { setCount(0); setBoard(Array(9).fill(null)); setGameCount(gameCount + 1); setInvalidMove(false); }}>
                             Start Game
                         </button>
                     }
